@@ -6,9 +6,9 @@ package com.stulsoft.app;
 
 import com.stulsoft.lib.SomeService;
 import com.stulsoft.lib.list.SomeList;
+import com.stulsoft.lib.math.MathService;
 import com.stulsoft.lib.service.subservice.SubService;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 
@@ -33,5 +33,10 @@ public class MainController {
     public void onShowList() {
         var someList = new SomeList();
         result.setText(String.join("\n", someList.show()));
+    }
+
+    public void onMathService() {
+        var mathService = MathService.service();
+        result.setText(mathService.show());
     }
 }

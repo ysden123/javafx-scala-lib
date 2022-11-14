@@ -19,6 +19,7 @@
             <MenuItem mnemonicParsing="false" onAction="#onSomeService" text="Some service" />
             <MenuItem mnemonicParsing="false" onAction="#onSubService" text="Sub service" />
             <MenuItem mnemonicParsing="false" onAction="#onShowList" text="Show list" />
+            <MenuItem mnemonicParsing="false" onAction="#onMathService" text="Math service" />
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#onQuit" text="Quit" />
         </Menu>
