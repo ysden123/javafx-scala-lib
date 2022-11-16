@@ -1,5 +1,4 @@
-//package org.gradle.sample.transform.javamodules;
-package com.stulsoft.gradle.transform.javamodules;
+package com.stulsoft.gradle;
 
 
 import org.gradle.api.Action;
