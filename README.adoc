@@ -1,3 +1,24 @@
 = javafx-scala-lib
 
 JavaFX with library on Scala
+
+== Modules
+The project consists of following modules:
+
+* app
+* buildSrc
+* lib
+
+_app_ module - is the implementation of *UI*.
+
+_lib_ module - is the library. It contains the services. The services are written on *Scala* and on *Java*. The _lib_ module has not module-info definition.
+
+_buildSrc_ module - is the Gradle project specific settings.
+
+The _kotlin_ directory contains usual Gradle settings.
+
+The _java_ directory contains code of the extra module-info plugin.
+This plugin is used in the _build.gradle.kts_ for _app_ module (see "_extra-java-module-info_").
+
+== References
+https://docs.gradle.org/current/samples/sample_java_modules_with_transform.html[Building Java Modules with Legacy Libraries Sample]

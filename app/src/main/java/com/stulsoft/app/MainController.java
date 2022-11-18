@@ -8,6 +8,7 @@ import com.stulsoft.lib.SomeService;
 import com.stulsoft.lib.list.SomeList;
 import com.stulsoft.lib.math.MathService;
 import com.stulsoft.lib.service.subservice.SubService;
+import com.stulsoft.lib.jlib.JavaLibService;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -38,5 +39,9 @@ public class MainController {
     public void onMathService() {
         var mathService = MathService.service();
         result.setText(mathService.show());
+    }
+
+    public void onJavaLibService() {
+        result.setText(JavaLibService.show());
     }
 }
