@@ -5,19 +5,26 @@
 package com.stulsoft.app;
 
 import com.stulsoft.lib.SomeService;
+import com.stulsoft.lib.async.AsyncService;
+import com.stulsoft.lib.jlib.JavaLibService;
 import com.stulsoft.lib.list.SomeList;
 import com.stulsoft.lib.math.MathService;
 import com.stulsoft.lib.service.subservice.SubService;
-import com.stulsoft.lib.jlib.JavaLibService;
+import com.stulsoft.lib.utils.SystemUtils;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 
 public class MainController {
     @FXML
     private TextArea result;
 
+    @FXML
+    private MenuItem asyncServiceMenuItem;
+
     public void onQuit() {
+        SystemUtils.shutdown();
         Platform.exit();
     }
 
@@ -43,5 +50,15 @@ public class MainController {
 
     public void onJavaLibService() {
         result.setText(JavaLibService.show());
+    }
+
+    public void onAsyncService() {
+        var asyncService = new AsyncService();
+        result.setText("Please wait ...");
+        asyncServiceMenuItem.setDisable(true);
+        asyncService.show(ar -> {
+            result.setText(ar);
+            asyncServiceMenuItem.setDisable(false);
+        });
     }
 }

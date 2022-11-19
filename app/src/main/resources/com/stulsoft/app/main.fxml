@@ -21,11 +21,11 @@
             <MenuItem mnemonicParsing="false" onAction="#onShowList" text="Show list (Scala)" />
             <MenuItem mnemonicParsing="false" onAction="#onMathService" text="Math service (Scala)" />
             <MenuItem mnemonicParsing="false" onAction="#onJavaLibService" text="Java lib service (Java)" />
+            <MenuItem mnemonicParsing="false" onAction="#onAsyncService" text="Async service" fx:id="asyncServiceMenuItem" />
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#onQuit" text="Quit" />
         </Menu>
     </MenuBar>
-    <!--        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />-->
     <AnchorPane VBox.vgrow="ALWAYS">
       <children>
          <Label layoutX="18.0" layoutY="25.0" text="Result:" />

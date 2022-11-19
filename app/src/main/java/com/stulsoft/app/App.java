@@ -4,6 +4,7 @@
 
 package com.stulsoft.app;
 
+import com.stulsoft.lib.utils.SystemUtils;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,7 +16,7 @@ import java.util.Objects;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
-public class App  extends Application {
+public class App extends Application {
     private static final String DEFAULT_PROPERTY_VALUE = "Unavailable";
 
     public static void main(String[] args) {
@@ -28,6 +29,7 @@ public class App  extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setTitle("JavaFX with Scala. " + findVersion());
         primaryStage.setScene(scene);
+        primaryStage.setOnCloseRequest(event -> SystemUtils.shutdown());
         primaryStage.show();
     }
 
