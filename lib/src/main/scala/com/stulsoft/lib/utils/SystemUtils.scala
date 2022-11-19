@@ -4,12 +4,12 @@
 
 package com.stulsoft.lib.utils
 
-import java.util.concurrent.Executors
-import scala.concurrent.ExecutionContext
+import java.util.concurrent.{ExecutorService, Executors}
+import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
 
 object SystemUtils {
-  lazy val executorService = Executors.newFixedThreadPool(10)
-  lazy val executionContext = ExecutionContext.fromExecutor(executorService)
+  lazy val executorService: ExecutorService = Executors.newFixedThreadPool(10)
+  lazy val executionContext: ExecutionContextExecutor = ExecutionContext.fromExecutor(executorService)
 
   def shutdown(): Unit ={
     executorService.shutdown()
